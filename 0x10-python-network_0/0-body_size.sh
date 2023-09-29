@@ -1,4 +1,6 @@
 #!/bin/bash
+# This script takes a URL as an argument, sends a request to the URL using curl in silent mode (-s), 
+# and displays the size of the response body in bytes.
 
 # Check if the URL argument is provided
 if [ $# -ne 1 ]; then
