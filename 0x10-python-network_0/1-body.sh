@@ -1,3 +1,3 @@
 #!/bin/bash
-# Send a GET request to the URL, discard headers, and display the body for a 200 status code response
-curl -s -X GET -I "$1" | awk 'NR == 1 {if ($2 == 200) {body=1} else {body=0}} NR > 1 {if (body) print}'
+# Send a GET request to the URL and display the body for a 200 status code response
+curl -s -o /tmp/body.txt -w "%{http_code}" "$1" && [ $(cat /tmp/body.txt) -eq 200 ] && cat /tmp/body.txt
