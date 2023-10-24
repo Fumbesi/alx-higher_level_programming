@@ -13,7 +13,7 @@ request(apiUrl, (error, response, body) => {
       }
       return acc;
     }, 0);
-    console.log(count);
+    console.log(count.toString()); // Print the count as a string
   } else {
     console.error('Error:', error);
   }
